@@ -1,14 +1,13 @@
 import styled from '@emotion/styled';
-import { setRandomColor } from '../../utils/setRandomColor';
+import { setRandomColor } from '../../utils';
 
 export const StatisticBoard = styled.section`
   margin: 0;
   padding-top: 20px;
-
   border: ${props => `1px solid ${props.theme.colors.darkGrey}`};
+  background-color: ${props => props.theme.colors.white};
   border-radius: 10px;
   box-shadow: 5px 5px 8px 1px rgba(112, 111, 111, 1);
-  background-color: ${props => props.theme.colors.white};
   overflow: hidden;
 `;
 

@@ -1,8 +1,19 @@
-import PropTypes from 'prop-types';
+import {FC} from 'react';
 import { StatisticBoard, StatisticsTitle, StatList, StatItem, StatLabel, StatPercentage } from './Statistics.styled';
 
+interface StatisticsStatsType {
+   id: string,
+  label: string,
+  percentage: number,
+ }
 
-export const Statistics = ({title, stats}) => {
+interface StatistcsProps {
+  title?: string,
+  stats: StatisticsStatsType[],
+}
+
+
+export const Statistics: FC<StatistcsProps> = ({title, stats}) => {
   return (
     <StatisticBoard>
       {title && <StatisticsTitle>{ title}</StatisticsTitle>}
@@ -20,13 +31,3 @@ export const Statistics = ({title, stats}) => {
 }
 
 
-Statistics.propTypes = {
-  title: PropTypes.string,
-  stats: PropTypes.arrayOf(
-    PropTypes.exact({
-      id: PropTypes.string.isRequired,
-      label: PropTypes.string.isRequired,
-      percentage: PropTypes.number.isRequired,
-    })
-  ),
-};

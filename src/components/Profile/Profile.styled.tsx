@@ -5,13 +5,12 @@ export const UserProfile = styled.div`
   flex-direction: column;
   align-items: center;
   row-gap: 16px;
-  border: ${props => `1px solid ${props.theme.colors.darkGrey}`};
   padding-top: 16px;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 5px 5px 8px 1px rgba(112, 111, 111, 1);
-  
-  /* border-bottom: 2px solid skyblue; */
+    border: ${props => `1px solid ${props.theme.colors.darkGrey}`};
+
 `;
 
 export const UserDescription = styled.div`
@@ -22,7 +21,7 @@ export const UserDescription = styled.div`
   row-gap: 12px;
 `;
 
-export const ProfilePhoto= styled.img`
+export const ProfilePhoto = styled.img`
   display: block;
   width: 300px;
 `;
@@ -52,7 +51,6 @@ export const Stats = styled.ul`
   width: 100%;
   list-style: none;
   background-color: ${props => props.theme.colors.lightGrey};
-  
 `;
 
 export const Item = styled.li`
@@ -62,10 +60,9 @@ export const Item = styled.li`
   padding-top: 28px;
   padding-bottom: 28px;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
   flex-basis: calc(100% / 3);
-   `;
-
+`;
 
 export const StatLabel = styled.span`
   font-size: 16px;

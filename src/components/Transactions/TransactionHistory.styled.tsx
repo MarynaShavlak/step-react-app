@@ -1,14 +1,14 @@
 import styled from '@emotion/styled';
-import { setRandomColor } from '../../utils/setRandomColor';
+import { setRandomColor } from '../../utils/';
 
 export const Table = styled.table`
   margin: 0;
   padding: 0;
   text-align: center;
   box-shadow: 5px 5px 8px 1px rgba(112, 111, 111, 1);
-  color: ${props => props.theme.colors.darkGrey};
   overflow: hidden;
   border-radius: 10px;
+  color: ${props => props.theme.colors.darkGrey};
 `;
 
 export const TableHeader = styled.thead`

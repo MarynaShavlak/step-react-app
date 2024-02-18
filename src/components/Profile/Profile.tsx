@@ -1,8 +1,22 @@
-import PropTypes from 'prop-types';
-import {UserProfile, UserDescription, ProfilePhoto, UserName, UserTag, UserLocation, Stats, Item, StatLabel, StatQuantity  } from './Profile.styled';
+import {FC} from 'react';
+import { UserProfile, UserDescription, ProfilePhoto, UserName, UserTag, UserLocation, Stats, Item, StatLabel, StatQuantity } from './Profile.styled';
 
+export interface ProfileStatsType {
+  followers: number,
+  views: number,
+  likes: number,
+}
 
-export const Profile =({username, tag, location, avatar, stats: { followers, views, likes }}) => {
+interface ProfileProps {
+  avatar: string,
+  tag: string,
+  username: string,
+  location: string,
+  stats: ProfileStatsType,
+
+}
+
+export const Profile: FC<ProfileProps> =({username, tag, location, avatar, stats: { followers, views, likes }}) => {
   return (
 <UserProfile>
   <UserDescription>
@@ -29,10 +43,3 @@ export const Profile =({username, tag, location, avatar, stats: { followers, vie
 );
 }
 
-Profile.propTypes = {
-  avatar: PropTypes.string.isRequired,
-  tag: PropTypes.string.isRequired,
-  username: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-  stats: PropTypes.objectOf(PropTypes.number.isRequired),
-}

@@ -1,4 +1,4 @@
-export function setRandomColor() {
+export function setRandomColor(): string {
   const randomColor =
     '#' +
     Math.floor(Math.random() * 16777215)

@@ -1,7 +1,19 @@
-import PropTypes from 'prop-types';
-import { Table, TableHeader,TableBody, ColumnHeading, TableRow, TableCell } from './TransactionHistory.styled';
+import React, { FC } from 'react';
 
-export const TransactionHistory = ({items}) => {
+import { Table, TableHeader, TableBody, ColumnHeading, TableRow, TableCell } from './TransactionHistory.styled';
+
+
+interface Transaction {
+  id: string,
+  type: string,
+  amount: string,
+  currency: string,
+}
+
+interface TransactionHistoryProps {
+items: Transaction[],
+}
+export const TransactionHistory: FC<TransactionHistoryProps > = ({items}) => {
   return (
     <Table>
       <TableHeader>
@@ -25,8 +37,3 @@ export const TransactionHistory = ({items}) => {
 }
 
 
-TransactionHistory.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.objectOf(
-      PropTypes.string.isRequired))
-};
